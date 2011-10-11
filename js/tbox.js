@@ -1,0 +1,135 @@
+/**
+ * JQuery Plugin for a tbox
+ * It will make you a popup box with all HTML and styling
+ *
+ * Author: tareq jobayere
+ * URL: http://tarex.name
+ * 
+ */
+
+
+(function($){
+
+          $.fn.tbox=function(tx)
+            {
+
+              var options=$.extend({
+                        height : "250",
+			width : "500",
+			title:"T-Box",
+			description: "this is a simple T-box , made by tareq jobayere",
+			top: "20%",
+			left: "30%",
+               },tx);
+
+
+
+            return this.click(function(e){
+                 start_blocking();
+                 start_txxbox();
+                 start_style();
+
+                  $('.tx_box').fadeIn();
+               });
+
+
+         function start_style(){
+                           $('.tx_box').css({
+                                'position':'absolute', 
+				'left':options.left,
+				'top':options.top,
+				'display':'none',
+				'height': options.height + 'px',
+				'width': options.width + 'px',
+				'border':'1px solid #fff',
+				'box-shadow': '0px 2px 7px #292929',
+				'-moz-box-shadow': '0px 2px 7px #292929',
+				'-webkit-box-shadow': '0px 2px 7px #292929',
+				'border-radius':'10px',
+				'-moz-border-radius':'10px',
+				'-webkit-border-radius':'10px',
+				'background': '#f2f2f2', 
+				'z-index':'50',
+
+                             });
+
+                        $('.tx_clear').css({
+                                'position':'relative',
+				'top':'-25px',
+				'left':'20px',
+				'float':'right',
+				'display':'block',
+				'height':'50px',
+				'width':'50px',
+				'background': 'url(images/close.png) no-repeat',
+                             });
+
+
+                           $('.tblock').css({
+                                'position':'absolute',
+				'top':'0',
+				'left':'0',
+				'background-color':'rgba(0,0,0,0.6)',
+				'height':'100%',
+				'width':'100%',
+				'z-index':'10'
+                           });
+
+                          $('.tx_inbox').css({
+                                'background-color':'#fff',
+				'height':(options.height - 50) + 'px',
+				'width':(options.width - 50) + 'px',
+				'padding':'10px',
+				'margin':'15px',
+				'border-radius':'10px',
+				'-moz-border-radius':'10px',
+				'-webkit-border-radius':'10px'
+
+                           });
+
+
+                     }
+
+
+
+
+
+  function start_blocking(){
+          var block=$('<div class="tblock"></div>');
+                $(block).appendTo('body');
+
+         }
+
+
+
+
+
+
+
+
+
+          function start_txxbox()
+          { 
+         
+               var pop=$('<div class="tx_box"><a href="#" class="tx_clear"></a><div class="tx_inbox"><h2>'+options.title +'</h2> <p>'+options.description+'</p> </div></div>');
+         
+                $(pop).appendTo('.tblock');
+
+           $('.tx_clear').click(function(){
+                 $(this).parent().fadeOut().remove();
+                $('.tblock').fadeOut().remove();
+            });
+
+          }
+
+     
+  
+        
+
+
+
+  return this;
+};
+
+
+})(jQuery);
