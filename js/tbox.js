@@ -41,7 +41,7 @@
 				'display':'none',
 				'height': options.height + 'px',
 				'width': options.width + 'px',
-				'border':'1px solid #fff',
+				'border':'0px solid #000',
 				'box-shadow': '0px 2px 7px #292929',
 				'-webkit-box-shadow':'inset 1px 1px 4px 1px #000',
                                 '-moz-box-shadow':'inset 1px 1px 4px 1px #000',
@@ -49,14 +49,14 @@
 				'border-radius':'6px',
 				'-moz-border-radius':'6px',
 				'-webkit-border-radius':'6px',
-				'background': '#f2f2f2', 
+				'background': '#fff', 
 				'z-index':'50',
 
                              });
 
                         $('.tx_clear').css({
                                 'position':'relative',
-				'top':'-25px',
+				'top':'-20px',
 				'left':'20px',
 				'float':'right',
 				'display':'block',
@@ -77,15 +77,11 @@
                            });
 
                           $('.tx_inbox').css({
-                                'background-color':'#fff',
-				'height':(options.height - 50) + 'px',
+                                'height':(options.height - 50) + 'px',
 				'width':(options.width - 50) + 'px',
 				'padding':'10px',
 				'margin':'15px',
-				'border-radius':'10px',
-				'-moz-border-radius':'10px',
-				'-webkit-border-radius':'10px'
-
+				
                            });
 
 
